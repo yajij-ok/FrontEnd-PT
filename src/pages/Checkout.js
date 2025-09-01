@@ -5,7 +5,6 @@ import BreadCrumb from '../components/breadCrumb'
 import {Link, useLocation, useNavigate} from "react-router-dom"
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import product_01 from "../../src/assets/images/watch.jpg"
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCreatedOrder, createOrder, getUserCart, orderSingleProduct } from '../features/user/userSlice';
 import axios from 'axios';

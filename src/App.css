@@ -816,6 +816,11 @@ font-weight: 500;
 
 
 /*Cart Page starts Here*/
+.empty-cart{
+  width: 20% ;
+  display: flex;
+  justify-self: center;
+}
 .cart-header,
 .cart-data{
   border-bottom: 1px solid #eaeaea;

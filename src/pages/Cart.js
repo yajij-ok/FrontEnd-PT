@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserCart } from '../features/user/userSlice';
 import { removeFromCart, updateProdCount } from '../features/product/productSlice';
+import emptycart from "../../src/assets/images/empty-cart.jpg"
 const Cart2 = () => {
   const dispatch = useDispatch()
  const [deliveryCharge, setDeliveryCharge] = useState(120)
@@ -61,6 +62,7 @@ if (getUser?.token) {
              <Meta title ="Your Cart" />
              <BreadCrumb title="cart" />
             <div className=''>
+            <img className='empty-cart' src={emptycart} />
               <p className='text-center my-5 fs-6'>
                 You have no item in the cart. <br/>  
                 <Link to="/store"> Add items</Link>
