@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactImageZoom from 'react-image-zoom';
 import Meta from '../components/meta'
@@ -18,6 +18,7 @@ const SingleProduct = () => {
   const location = useLocation()
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const sectionRef = useRef(null)
   const [quantity, setQuantity] = useState(1)
 
   const prodId = location.pathname.split("/")[2]
@@ -95,12 +96,18 @@ const buyNowCtrl = () =>{
       navigate("/login")
     },300)
   }
+  else if(color===""){
+     setWarning("show")
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    sectionRef.current.focus();
+  }
 else  navigate(`/product/buy/${productState._id}?qty=${quantity}&color=${color}`)
 }
 const [orderedProduct, setOrderedProduct] = useState(true);
 const [mainImage, setMainImage] = useState(PLACEHOLDER);
 const [imgSerial, setImgSerial] = useState(0)
-const [color, setColor] = useState(productState?.color?.[0]?.title || "")
+const [color, setColor] = useState("")
+const [warning, setWarning] = useState("d-none")
 console.log(color);
 
 
@@ -115,21 +122,6 @@ const visibleImg = useMemo(() => {
 }, [productState, imgSerial, ImgPerColor]);
 
 
-//useEffect(() => {
-  //  if (!productState) return;
-
-//    const raw = visibleImg || []; // try a few likely names
-//    const normalized = raw.map((it) => {
-//      if (!it) return null;
-//      if (typeof it === "string") return it;
-      // common fields where url might live
-//      return it.url || it.src || it.image || it.path || null;
-//    }).filter(Boolean);
-
-//    setImages(normalized.length ? normalized : []);
-    // set main image to first available (or placeholder)
-//    setMainImage(normalized[0] ?? PLACEHOLDER);
-//  }, [productState, visibleImg]);
 
 const images = useMemo(() => {
   return visibleImg
@@ -238,7 +230,7 @@ const productData = {
       </span>
         </div>
             </div>
-             <div className='my-4'>
+             <div className='my-4' ref={sectionRef} tabIndex="-3">
               <h5 className="py-2 mb-1">Select Color :</h5>
               <ul className="colors ps-0">
                 {productState?.color.map((i, index)=>{
@@ -257,6 +249,7 @@ const productData = {
               )
                 })}        
             </ul>
+             <p className={`text-danger ${warning}`}>Please, Pick a color. Click on the color even if it shows selected.</p>
              </div>
              <div  className="d-flex flex-wrap py-2">
                 <h5 className="pe-2">Screen:</h5>
@@ -284,12 +277,13 @@ const productData = {
                     <h5 className="pe-2">Available:</h5>
                     <p>Yes</p>
                   </div>
+                 
                   <div className="d-flex flex-column py-2">
-                    <h5 className="pe-2">Quantity:</h5>
+                    <h5 className="pe-2" >Quantity:</h5>
                     <div className="py-2 d-flex justify-content-center gap-15">
                       <input type="number" name="" min={1} max={10} value={quantity} defaultValue={1}
                        onChange={(e)=>{setQuantity(Number(e.target.value))}}
-                        style={{ width: "35px"}} id=""
+                        style={{ width: "35px"}} id="quantity"
                          />
                      
                       <button className="button border-0" onClick={buyNowCtrl}>
