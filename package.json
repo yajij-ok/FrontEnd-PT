@@ -44,6 +44,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "rules": {
+    "no-unused-vars": "warn",
+    "react/prop-types": "warn"
+  },
     "extends": [
       "react-app",
       "react-app/jest"
