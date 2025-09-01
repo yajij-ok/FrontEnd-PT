@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Meta from '../components/meta'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -57,7 +57,7 @@ const Home = () => {
 
  const [currentSlide, setCurrentSlide] = useState(0);
 
- const settings = {
+ const settings = useMemo(()=>({
     dots: true,
     infinite: true,
     speed: 500,
@@ -65,8 +65,10 @@ const Home = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
-    afterChange: (index) => setCurrentSlide(index),
-  };
+    afterChange:  (index) => {
+        setCurrentSlide((prev) => (prev !== index ? index : prev));
+      },
+  }),[]);
 
   if (isLoading) {
     return(
