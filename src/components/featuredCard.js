@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import ReactStars from "react-rating-stars-component";
-import product_01 from "../../src/assets/images/watch.jpg"
 import { addToCart, removeFromCart } from '../features/product/productSlice';
 import {  useDispatch, useSelector } from 'react-redux';
 import { getUserCart } from '../features/user/userSlice';
@@ -61,7 +60,7 @@ const FeaturedCard = (props) => {
             <ReactStars
              count={5} size={24} value='3' edit={false} activeColor="#ffd700"/> 
     <p className="price">
-    ৳ {props.price .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}/-
+    ৳ {props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}/-
     </p>
       </div>
       </Link>

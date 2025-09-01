@@ -3,7 +3,7 @@ import {NavLink, Link, useLocation, useNavigate} from 'react-router-dom'
 import {BsSearch , BsCart4, BsHeart, BsPerson, BsRepeat} from 'react-icons/bs'
 import {CgMenuGridO} from 'react-icons/cg'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearSuggestions, getallCat, getWishList, searchSuggestion } from '../features/product/productSlice'
+import { clearSuggestions, getallCat, searchSuggestion } from '../features/product/productSlice'
 
 
 const Header = () => {
@@ -205,9 +205,9 @@ const handleKeyDown = (e) => {
 </div>
           <div className="menu-links">
             <div className="d-flex align-items-center gap-30">
-              <NavLink to="/" className={`${location.pathname=="/" ? "text-warning" : "menu-link"}`}>Home</NavLink>
-              <NavLink to="/store" className={`${location.pathname=="/store" ? "text-warning": "menu-link"}`}>Our Store</NavLink>
-              <NavLink to="/contact" className={`${location.pathname=="/contact" ? "text-warning": "menu-link"}`}>Contact</NavLink>
+              <NavLink to="/" className={`${location.pathname==="/" ? "text-warning" : "menu-link"}`}>Home</NavLink>
+              <NavLink to="/store" className={`${location.pathname==="/store" ? "text-warning": "menu-link"}`}>Our Store</NavLink>
+              <NavLink to="/contact" className={`${location.pathname==="/contact" ? "text-warning": "menu-link"}`}>Contact</NavLink>
             </div>
           </div>
             </div>

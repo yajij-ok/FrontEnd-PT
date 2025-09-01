@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import ReactStars from "react-rating-stars-component";
-import product_01 from "../../src/assets/images/watch.jpg"
-import product_01t from "../../src/assets/images/watch-1.jpg"
 import add_cart from "../../src/assets/images/add-cart.svg"
 import compare from "../../src/assets/images/prodcompare.svg"
 import view from "../../src/assets/images/view.svg"
-import wishlist from "../../src/assets/images/wish.svg"
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, addToWishList, getWishList } from '../features/product/productSlice';
 import { enqueueSnackbar } from 'notistack';
@@ -51,7 +48,7 @@ const addProdToCart = (productData) =>{
         color: ""
      }
     return (
-         <div key={index} className={` ${location.pathname =="/store" || "/store/search?" ? `gr-${grid}` : "col-3"} `}>
+         <div key={index} className={` ${location.pathname ==="/store" || "/store/search?" ? `gr-${grid}` : "col-3"} `}>
     <div className="product-card position-relative gap-10">
         <div className="wishlist-icon position-absolute">
             <button className='border-0 bg-transparent' onClick={(e)=>{

@@ -15,8 +15,8 @@ const Footer = () => {
       <ul>
       <li><a href="/privacy-policy">Privacy Policies</a></li>
       <li><a href="/terms-conditions">Terms & Conditions</a></li>
-       <li> <a href="">Help</a></li>
-       <li> <a href="">FAQs</a></li>
+       <li> <a href="#">Help</a></li>
+       <li> <a href="#">FAQs</a></li>
        </ul>
        </div>
        </div>
