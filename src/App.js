@@ -14,6 +14,7 @@ import Wishlist from './pages/Wishlist';
 import Checkout from './pages/Checkout';
 import Shipping from './pages/Shipping';
 import SignUp from './pages/Signup';
+import Compare_copy from './pages/Compare_copy';
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       <Route path='/store' element={ <OurStore /> } />
       <Route path='/store/search?' element={ <OurStore /> } />
       <Route path='/contact' element={ <Contact/> } />
-      <Route path='/compare-product' element={ <Compare/> } />
+      <Route path='/compare-product' element={ <Compare_copy/> } />
       <Route path='/login' element={ <Login/> } />
        <Route path='/signUp' element={ <SignUp/> } />
       <Route path='/forgot-password' element={ <ForgotPassword/> } />
