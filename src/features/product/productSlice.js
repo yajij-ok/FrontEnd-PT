@@ -226,6 +226,9 @@ export const productSlice = createSlice({
 
       }).addCase(addToCart.pending, (state) => {
         state.isLoading = true;
+        if (state.isLoading) {
+          enqueueSnackbar("Adding Product to your Cart")
+        }
       })
       .addCase(addToCart.fulfilled, (state, action) => {
         state.isError = false;
@@ -233,7 +236,7 @@ export const productSlice = createSlice({
         state.isSuccess = true;
         state.message = "success"
         if(state.isSuccess === true){
-          enqueueSnackbar("Product added to Cart")
+          enqueueSnackbar("Product is added to your Cart")
         }
       })
       .addCase(addToCart.rejected, (state, action) => {
@@ -299,6 +302,7 @@ export const productSlice = createSlice({
       })
       .addCase(getBrands.pending, (state) => {
         state.isLoading = true;
+        
       })
       .addCase(getBrands.fulfilled, (state, action) => {
         state.isError = false;

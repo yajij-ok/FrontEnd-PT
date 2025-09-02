@@ -46,7 +46,7 @@ const FeaturedCard = (props) => {
         }
 
   return (
-<div className="col-3">
+<div className="col-2" style={{width: "19%"}}>
     <div className="featured-card">
 <Link to={`/product/${props.id}`} className='text-dark'>
           <div className="featured-image text-center">
@@ -57,9 +57,7 @@ const FeaturedCard = (props) => {
             <h5>
                {props.title}
             </h5>
-            <ReactStars
-             count={5} size={24} value='3' edit={false} activeColor="#ffd700"/> 
-    <p className="price">
+    <p className="price mb-2">
     ৳ {props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}/-
     </p>
       </div>

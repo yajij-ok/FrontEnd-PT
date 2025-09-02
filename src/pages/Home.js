@@ -51,7 +51,7 @@ const Home = () => {
   },[dispatch])
 
   const productState = useSelector((state)=> state.product.allProducts)
-    const {isLoading} = useSelector((state)=> state.product)
+    const {isLoading} = useSelector((state)=> state.server)
 
 
 

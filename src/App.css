@@ -499,8 +499,11 @@ display: block;
 
 /*featured card Start Here*/
 .featured-card{
+  height: 60vh;
    background-color: white;
   border-radius: 10px;
+  width: 100%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -521,11 +524,18 @@ display: block;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 5px;
-  width: 70%;
+  height: 25vh;
+  width: auto;
 }
 .featured-product-details{
-  height: 105px;
+  height: 110px;
 }
+
+.featured-product-details h5{
+  height: 60px;
+}
+
+
 .featured-product-details p{
  font-size: 14px;
  font-weight: 600;
