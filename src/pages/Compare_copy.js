@@ -9,7 +9,7 @@ const Compare_copy = () => {
    <BreadCrumb title="compare-product" />
     <div className='loading'>
     <div class="text-center mb-2 mt-5">
-        <i class="fa-solid fa-gears fa-lg" style="color: #a6a6a6;"></i>
+        <i class="fa-solid fa-gears" style={{color: "#a6a6a6", fontSize: "50px"}}></i>
     </div>
     </div>
      <p class="text-dark text-center mt-1 mb-5 fs-5">Work in progress.... Please feel free to surf other sections.... </p>
