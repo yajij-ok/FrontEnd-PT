@@ -46,7 +46,7 @@ const FeaturedCard = (props) => {
         }
 
   return (
-<div className="col-2" style={{width: "19%"}}>
+
     <div className="featured-card">
 <Link to={`/product/${props.id}`} className='text-dark'>
           <div className="featured-image text-center">
@@ -71,7 +71,6 @@ const FeaturedCard = (props) => {
       </div>
         
     </div>
-</div>
   )
 }
 

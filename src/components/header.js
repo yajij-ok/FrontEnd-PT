@@ -83,9 +83,10 @@ const handleKeyDown = (e) => {
         </div>
       </div>
     </header>
+
     <header className="header-upper py-4">
       <div className="container-xxl">
-        <div className="row align-items-center ps-3">
+        <div className="row logo-search ps-3">
           <div className="col-2">
             <h2 className="ps-4">
               <Link to="/" className="text-white">PlayTech</Link>
@@ -143,7 +144,7 @@ const handleKeyDown = (e) => {
       )}
 </div>
          </div>
-         <div className="col-5">
+         <div className="col-5 header-top">
           <div className="header-upper-links ms-5 gap-10">
             <div className={`${location.pathname==="compare-product" ? "text-warning" : "text-white"}`} >
               <Link to="/compare-product" className="text-white d-flex align-items-center" >
@@ -215,6 +216,7 @@ const handleKeyDown = (e) => {
         </div>
       </div>
     </header>
+    
       </>
   )
 }

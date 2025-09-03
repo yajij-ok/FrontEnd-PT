@@ -1,6 +1,7 @@
 import React from 'react'
  import play from '../../src/assets/icons/google-play.svg'
 import apple from '../../src/assets/icons/apple.svg'
+import { Link } from 'react-router-dom'
 const Footer = () => {
  return (
  <>
@@ -33,7 +34,7 @@ const Footer = () => {
        <div className="col-3">
        <div className="footer-list-3 container-xxl py-3">
       <ul>
-      <li> <a href="/contact">Contact</a></li>
+      <li> <Link to="/contact" >Contact</Link></li>
        <li> <a href="">Facebook</a></li>
        <li><a href="">Twitter</a></li>
        <li> <a href="">InstaGram</a></li>

@@ -145,35 +145,35 @@ const Home = () => {
     <div className="row">
     <div className="col-12">
       <div className="services d-flex align-items-center justify-content-between ps-6 gap-30">
-        <div className="d-flex align-items-center gap-10">
+        <div className="service-details d-flex align-items-center gap-10">
           <img src={services_1} alt="services-1" className='service-icon' />
           <div className="py-1">
             <h6>Free shipping</h6>
             <p>From all orders over 5000Tk</p>
           </div>
         </div>
-        <div className="d-flex align-items-center gap-10">
+        <div className=" service-details d-flex align-items-center gap-10">
           <img src={services_2} alt="fdhg" className='service-icon' />
           <div className="py-1">
             <h6>Surprise offers</h6>
             <p>Save upto 25%</p>
           </div>
         </div>
-        <div className="d-flex align-items-center gap-10">
+        <div className="service-details d-flex align-items-center gap-10">
           <img src={services_3} alt="dhg" className='service-icon' />
           <div className="py-1">
             <h6>Support 24/7</h6>
             <p>Shop with an expert</p>
           </div>
         </div>
-        <div className="d-flex align-items-center gap-10">
+        <div className="service-details d-flex align-items-center gap-10">
           <img src={services_4} alt="dtgjhtg" className='service-icon' />
           <div className="py-1">
             <h6>Affordable Prices</h6>
             <p>Get factory default price</p>
           </div>
         </div>
-        <div className="d-flex align-items-center gap-10">
+        <div className=" service-details d-flex align-items-center gap-10">
           <img src={services_5} alt="" className='service-icon' />
           <div className="py-1">
             <h6>Secure payment</h6>
@@ -186,12 +186,10 @@ const Home = () => {
   </div>
 </section>
 
-<section className="featured-wrapper py-5 home-wrapper-2 mx-3">
-  <div className="container-xl">
-    <div className="row">
-      <div className="col-12">
+<section className="py-5 px-5 home-wrapper-2 mx-3">      
         <h3 className="section-heading">Featured Collection</h3>
-        <div class="row">
+        <div className='featured-wrapper'>
+        <div class="featured-card-wrapper d-flex gap-30">
            {
         productState?.slice().reverse().map((item, index)=>{ 
         const productData = {
@@ -209,12 +207,8 @@ const Home = () => {
           
         })
       }
-        </div>
-      </div>
-    
-
-    </div>
-  </div>
+        </div> 
+        </div> 
 </section>
 
 <section className="famous-wrapper py-3 home-wrapper-2 pb-5">
